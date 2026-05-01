@@ -37,16 +37,6 @@ This repository provides a very small 3-service architecture for local security 
 └── README.md
 ```
 
-## Docker Support
-
-Each service has its own Dockerfile:
-- `frontend/Dockerfile`
-- `backend/Dockerfile`
-- `database/Dockerfile`
-
-`docker-compose.yml` runs all services together and uses Docker service names for communication:
-- Frontend -> Backend: `http://backend:5001`
-- Backend -> Database: `database:5432`
 
 ## Run Locally with Docker
 
