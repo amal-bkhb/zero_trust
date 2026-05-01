@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 import os
-import time
+
 import psycopg2
 
 app = Flask(__name__)
@@ -14,14 +14,7 @@ DB_CONFIG = {
 }
 
 
-def get_connection(max_retries=10, wait_seconds=2):
-    for attempt in range(1, max_retries + 1):
-        try:
-            return psycopg2.connect(**DB_CONFIG)
-        except psycopg2.OperationalError:
-            if attempt == max_retries:
-                raise
-            time.sleep(wait_seconds)
+
 
 
 def initialize_db():
