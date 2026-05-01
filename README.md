@@ -23,7 +23,7 @@ This repository provides a very small 3-service architecture for local security 
 └── README.md
 ```
 
-<
+
 
 ```bash
 docker compose up --build

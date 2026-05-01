@@ -12,6 +12,7 @@ spec:
       labels:
         app: database
     spec:
+
       containers:
         - name: database
           image: postgres:16-alpine

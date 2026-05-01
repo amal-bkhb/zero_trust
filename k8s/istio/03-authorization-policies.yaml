@@ -1,0 +1,37 @@
+# Backend: allow only frontend workload identity on port 5001.
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: backend-allow-frontend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/default/sa/frontend-sa
+      to:
+        - operation:
+            ports: ["5001"]
+---
+# Database: allow only backend workload identity on port 5432.
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: database-allow-backend
+spec:
+  selector:
+    matchLabels:
+      app: database
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/default/sa/backend-sa
+      to:
+        - operation:
+            ports: ["5432"]
