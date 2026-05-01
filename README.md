@@ -10,10 +10,7 @@ This repository provides a very small 3-service architecture for local security 
 
 ## Communication Flow
 
-1. User opens `http://localhost:5000` (frontend).
-2. Frontend calls its own `/api/backend-status` endpoint.
-3. Frontend service forwards request to backend at `http://backend:5001/api/data`.
-4. Backend connects to PostgreSQL (`database:5432`) and reads data from `notes` table.
+
 5. Backend returns JSON to frontend, frontend returns JSON to browser.
 
 ## Folder Structure
@@ -21,24 +18,12 @@ This repository provides a very small 3-service architecture for local security 
 ```text
 .
 ├── backend/
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-├── database/
-│   ├── Dockerfile
-│   └── init.sql
-├── frontend/
-│   ├── app.py
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   └── templates/
-│       └── index.html
+
 ├── docker-compose.yml
 └── README.md
 ```
 
 
-## Run Locally with Docker
 
 ```bash
 docker compose up --build
@@ -48,7 +33,7 @@ Then open:
 - Frontend UI: `http://localhost:5000`
 - Backend API directly: `http://localhost:5001/api/data`
 
-## Stop
+
 
 ```bash
 docker compose down
