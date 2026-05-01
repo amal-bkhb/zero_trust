@@ -12,7 +12,7 @@ spec:
       labels:
         app: database
     spec:
-      serviceAccountName: database-sa
+
       containers:
         - name: database
           image: postgres:16-alpine

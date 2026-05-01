@@ -12,7 +12,7 @@ spec:
       labels:
         app: backend
     spec:
-      serviceAccountName: backend-sa
+
       containers:
         - name: backend
           image: zero-trust-backend:latest
