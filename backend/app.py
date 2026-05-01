@@ -16,6 +16,7 @@ DB_CONFIG = {
 
 
 
+
 def initialize_db():
     with get_connection() as conn:
         with conn.cursor() as cur:

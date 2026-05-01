@@ -23,7 +23,7 @@ This repository provides a very small 3-service architecture for local security 
 └── README.md
 ```
 
-
+<
 
 ```bash
 docker compose up --build
@@ -33,8 +33,3 @@ Then open:
 - Frontend UI: `http://localhost:5000`
 - Backend API directly: `http://localhost:5001/api/data`
 
-
-
-```bash
-docker compose down
-```
