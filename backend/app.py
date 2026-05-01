@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import os
+
 import psycopg2
 
 app = Flask(__name__)
@@ -12,9 +13,6 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD", "studypass"),
 }
 
-
-def get_connection():
-    return psycopg2.connect(**DB_CONFIG)
 
 
 def initialize_db():

@@ -37,6 +37,7 @@ This repository provides a very small 3-service architecture for local security 
 └── README.md
 ```
 
+
 ## Run Locally with Docker
 
 ```bash
@@ -52,4 +53,3 @@ Then open:
 ```bash
 docker compose down
 ```
-
